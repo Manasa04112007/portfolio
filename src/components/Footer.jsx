@@ -6,7 +6,7 @@ function Footer() {
       <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         {/* Custom Logo Section (replacing Tailblocks logo) */}
         <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
-          <a className="flex title-font font-medium items-center md:justify-start justify-center text-white">
+          <a href="/" className="flex title-font font-medium items-center md:justify-start justify-center text-white">
             {/* Custom Logo (You can replace this SVG with your custom logo) */}
             <div className="w-10 h-10 bg-indigo-500 rounded-full flex items-center justify-center">
               <span className="text-lg text-white font-bold">MR</span> {/* Replace with your custom text or logo */}

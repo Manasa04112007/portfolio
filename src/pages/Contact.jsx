@@ -10,7 +10,7 @@ function Contact() {
     e.preventDefault();
     if (name && email && message) {
       setShowPopup(true);
-      setTimeout(() => setShowPopup(false), 3000); // Hide popup after 3 seconds
+      setTimeout(() => setShowPopup(false), 3000);
       setName("");
       setEmail("");
       setMessage("");
@@ -74,7 +74,7 @@ function Contact() {
                     className="w-full bg-white rounded border border-blue-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 h-32 text-base outline-none text-gray-700 py-2 px-4 resize-none leading-6 transition-colors duration-200 ease-in-out"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                  ></textarea>
+                  />
                 </div>
               </div>
               <div className="p-2 w-full">
@@ -88,8 +88,7 @@ function Contact() {
             </div>
           </form>
         </div>
-        
-        {/* Popup Notification */}
+
         {showPopup && (
           <div className="fixed top-10 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-8 py-4 rounded-lg shadow-lg">
             <p>Message sent successfully!</p>
@@ -101,11 +100,18 @@ function Contact() {
             manasarameshb@gmail.com
           </a>
           <p className="leading-normal my-5 text-gray-600">
-            49 Smith St.<br />
+            49 Smith St.
+            <br />
             Saint Cloud, MN 56301
           </p>
           <span className="inline-flex">
-            <a href="#" className="text-gray-500 hover:text-blue-600">
+            <a
+              href="https://github.com/Manasa04112007"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-500 hover:text-blue-600"
+              aria-label="GitHub"
+            >
               <svg
                 fill="currentColor"
                 strokeLinecap="round"
@@ -117,7 +123,13 @@ function Contact() {
                 <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
               </svg>
             </a>
-            <a href="#" className="ml-4 text-gray-500 hover:text-blue-600">
+            <a
+              href="https://twitter.com/Manasa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-4 text-gray-500 hover:text-blue-600"
+              aria-label="Twitter"
+            >
               <svg
                 fill="currentColor"
                 strokeLinecap="round"
