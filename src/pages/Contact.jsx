@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 function Contact() {
   const [name, setName] = useState("");
@@ -8,12 +9,35 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (name && email && message) {
-      setShowPopup(true);
-      setTimeout(() => setShowPopup(false), 3000);
-      setName("");
-      setEmail("");
-      setMessage("");
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        message: message,
+      };
+
+      emailjs
+        .send(
+          "service_g7o6t2t", // replace with your EmailJS service ID
+          "template_9aj0rql", // replace with your EmailJS template ID
+          templateParams,
+          "En8vinxDQ0mmoKI9j" // replace with your EmailJS public key
+        )
+        .then(
+          (response) => {
+            console.log("SUCCESS!", response.status, response.text);
+            setShowPopup(true);
+            setTimeout(() => setShowPopup(false), 3000);
+            setName("");
+            setEmail("");
+            setMessage("");
+          },
+          (error) => {
+            console.log("FAILED...", error);
+            alert("Failed to send message, please try again.");
+          }
+        );
     } else {
       alert("Please fill in all fields.");
     }
